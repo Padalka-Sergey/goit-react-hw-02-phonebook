@@ -17,9 +17,9 @@ export class App extends Component {
   formSubmitHandler = dataHandle => {
     // console.log(dataHandle);
     const { contacts } = this.state;
-    const { name, number } = dataHandle;
+    const { name } = dataHandle;
     for (let i = 0; i < contacts.length; i += 1) {
-      if (contacts[i].name === name && contacts[i].number === number) {
+      if (contacts[i].name === name) {
         alert(`${contacts[i].name} is already in contacts!`);
         return;
       }

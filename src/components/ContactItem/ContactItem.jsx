@@ -34,18 +34,18 @@ export const ContactsItem = ({ contacts, filterContacts, onDelete }) => {
 };
 
 ContactsItem.propTypes = {
-  // contacts: PropTypes.arrayOf(
-  //   PropTypes.exact({
-  //     id: PropTypes.string.isRequired,
-  //     name: PropTypes.string.isRequired,
-  //     number: PropTypes.number.isRequired,
-  //   })
-  // ),
+  contacts: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ),
   filterContacts: PropTypes.arrayOf(
     PropTypes.exact({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      number: PropTypes.number.isRequired,
+      number: PropTypes.string.isRequired,
     })
   ),
   onDelete: PropTypes.func.isRequired,
