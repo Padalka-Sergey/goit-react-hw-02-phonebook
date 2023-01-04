@@ -15,13 +15,14 @@ export class App extends Component {
   };
 
   formSubmitHandler = dataHandle => {
-    // console.log(dataHandle);
     const { contacts } = this.state;
+    // console.log(contacts);
     const { name } = dataHandle;
     for (let i = 0; i < contacts.length; i += 1) {
       if (contacts[i].name === name) {
+        console.log('Имя совпало');
         alert(`${contacts[i].name} is already in contacts!`);
-        return;
+        return true;
       }
     }
     const newContact = {
@@ -67,7 +68,10 @@ export class App extends Component {
 
     return (
       <Container title="Phonebook">
-        <ContactForm onSubmitProps={formSubmitHandler} />
+        <ContactForm
+          onSubmitProps={formSubmitHandler}
+          onResetValue={this.onResetValue}
+        />
         <ContactsList title="Contacts">
           <Filter value={filter} onFilterHandler={onFilterHandler} />
           <ContactsItem

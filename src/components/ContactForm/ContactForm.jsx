@@ -8,6 +8,8 @@ export class ContactForm extends Component {
     number: '',
   };
 
+  // resetValue = true;
+
   static propTypes = {
     onSubmitProps: PropTypes.func.isRequired,
   };
@@ -19,7 +21,10 @@ export class ContactForm extends Component {
 
   handleSubmit = evt => {
     evt.preventDefault();
-    this.props.onSubmitProps(this.state);
+    // this.props.onSubmitProps(this.state);
+    if (this.props.onSubmitProps(this.state)) {
+      return;
+    }
     this.reset();
   };
 
